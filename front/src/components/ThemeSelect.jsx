@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import { createPortal } from "react-dom";
 
-const ThemeSelect = () => {
-  const [theme, setTheme] = useState("");
-  const onChoose = (event) => {
-    setTheme(event.target.value);
-  };
+const ThemeSelect = ({ handleSelect }) => {
   return (
     <div>
-      <select>
+      <select onChange={handleSelect}>
         <option value="gaming">Gaming</option>
         <option value="cooking">Cooking</option>
         <option value="programming">Programming</option>
