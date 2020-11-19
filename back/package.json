@@ -1,0 +1,34 @@
+{
+  "name": "straribay_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " npm run dev",
+    "build": "tsc",
+    "lint": "eslint . & echo 'lint complete'",
+    "dev": "ts-node-dev --transpile-only --respawn ./src/server.ts",
+    "prod": "tsc && node ;/build/src:server.js",
+    "debug": "tsc && node --inspect ./built/src/server.js"
+  },
+  "author": "MaxiLoud, Rbn777, Vince, Nishibi, Lusidave",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.8",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/graphql": "^14.5.0",
+    "@types/mongoose": "^5.10.1",
+    "@types/node": "^14.14.8",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.5"
+  }
+}
