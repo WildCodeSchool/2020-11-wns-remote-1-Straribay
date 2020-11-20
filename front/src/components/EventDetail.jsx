@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../styles/elements";
+
+import { Header, BottomContainer, NavBar, CreationContainer, LastContainer } from '../styles/containers';
+import { Title, Button } from "../styles/elements";
 import eventList from "./Data";
 
 const Details = (props) => {
@@ -12,26 +14,45 @@ const Details = (props) => {
     eventList.push(event);
   };
   return (
-    <>
-      <h1>{title}</h1>
-      <h1>{theme}</h1>
-      <h1>{description}</h1>
-      <h1>{date}</h1>
-      <h1>{hour}</h1>
-      <h1>{info}</h1>
-      <h1>Only {attending} can attend</h1>
-      <h1>You've invited {userSelected}</h1>
-      <Link
-        to={{
-          pathname: "./events",
-          state: {
-            eventlist: eventList,
-          },
-        }}
-      >
-      <Button onClick={addNewEvent}>Add this event ?</Button>
-      </Link>
-    </>
+
+  <>
+  <Header>
+    <div>
+      <p>Logo</p>
+    </div>
+    <div>
+      <p>Profil emplacement</p>
+    </div>
+  </Header>
+  <BottomContainer>
+    <NavBar>
+      Hello
+    </NavBar>
+    <LastContainer>
+      <Title>Create your Event</Title>
+      <CreationContainer>
+        <h3>{title}</h3>
+        <h3>{theme}</h3>
+        <h3>{description}</h3>
+        <h3>{date}</h3>
+        <h3>{hour}</h3>
+        <h3>{info}</h3>
+        <h3>Only {attending} can attend</h3>
+        <h3>You've invited {userSelected}</h3>
+        <Link
+          to={{
+            pathname: "./events",
+            state: {
+              eventlist: eventList,
+            },
+          }}
+        >
+          <Button onClick={addNewEvent}>Add this event ?</Button>
+        </Link>
+      </CreationContainer>
+    </LastContainer>
+  </BottomContainer>
+  </>
   );
 };
 
