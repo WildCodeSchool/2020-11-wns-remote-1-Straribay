@@ -1,0 +1,49 @@
+{
+  "name": "straribay_back",
+  "version": "1.0.0",
+  "description": "",
+<<<<<<< HEAD
+  "main": "./src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":" nodemon tsc src/server.ts "
+  },
+  "author": "Maxi Loud, Rbn777, Vince, Nishibi, Lusidave",
+=======
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " npm run dev",
+    "build": "tsc",
+    "lint": "eslint . & echo 'lint complete'",
+    "dev": "ts-node-dev --transpile-only --respawn ./src/server.ts",
+    "prod": "tsc && node ;/build/src:server.js",
+    "debug": "tsc && node --inspect ./built/src/server.js"
+  },
+  "author": "MaxiLoud, Rbn777, Vince, Nishibi, Lusidave",
+>>>>>>> aefac7554096cabf0fc9b8647c598e5c2298b72f
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.8",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+<<<<<<< HEAD
+    "@types/mongoose": "^5.10.1",
+    "@types/node": "^14.14.8",
+    "nodemon": "^2.0.6",
+=======
+    "@types/express": "^4.17.9",
+    "@types/graphql": "^14.5.0",
+    "@types/mongoose": "^5.10.1",
+    "@types/node": "^14.14.8",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+>>>>>>> aefac7554096cabf0fc9b8647c598e5c2298b72f
+    "typescript": "^4.0.5"
+  }
+}
