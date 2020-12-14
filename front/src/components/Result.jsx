@@ -3,7 +3,7 @@ import React from "react";
 const Result = ({ userSuggestions, value, valueInsensibleCase }) => {
   return (
     <div>
-      {value !== "" ? (
+      {value !== "" && (
         <datalist id="users">
           {userSuggestions
             .filter((userSuggestion) => {
@@ -17,10 +17,8 @@ const Result = ({ userSuggestions, value, valueInsensibleCase }) => {
               );
             })}
         </datalist>
-      ) : (
-        ""
-        )}
-    </div>      
+      )}
+    </div>
   );
 };
 

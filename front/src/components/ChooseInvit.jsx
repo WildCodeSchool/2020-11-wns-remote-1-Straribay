@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 
 import Result from "./Result";
 
-import { Header, NavBar, BottomContainer, LastContainer, CreationContainer } from '../styles/containers';
+import {
+  Header,
+  NavBar,
+  BottomContainer,
+  LastContainer,
+  CreationContainer,
+} from "../styles/containers";
 import { Button, Title } from "../styles/elements";
 
 let userSuggestions = ["Cloé", "Baptiste", "Maxime", "Marie"];

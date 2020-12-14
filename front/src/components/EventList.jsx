@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import EventCard from './EventCard';
-import { Header, BottomContainer, NavBar, LastContainer } from '../styles/containers';
-import { Title } from '../styles/elements';
-import eventList from './Data';
-
+import EventCard from "./EventCard";
+import {
+  Header,
+  BottomContainer,
+  NavBar,
+  LastContainer,
+} from "../styles/containers";
+import { Title } from "../styles/elements";
+import eventList from "./Data";
 
 function EventList() {
   return (
@@ -18,14 +22,13 @@ function EventList() {
         </div>
       </Header>
       <BottomContainer>
-        <NavBar>
-          Hello
-        </NavBar>
+        <NavBar>Hello</NavBar>
         <LastContainer>
           <Title>Create your Event</Title>
-          {eventList.map(event => {
+          {eventList.map((event) => {
             return (
-              <EventCard key={event.id}
+              <EventCard
+                key={event.id}
                 title={event.title}
                 date={event.date}
                 hour={event.hour}
@@ -34,12 +37,12 @@ function EventList() {
                 infos={event.infos}
                 image={event.image}
               />
-            )
+            );
           })}
         </LastContainer>
       </BottomContainer>
     </>
-  )
+  );
 }
 
 export default EventList;

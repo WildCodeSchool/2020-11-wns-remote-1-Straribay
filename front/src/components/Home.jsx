@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 import ThemeSelect from "./ThemeSelect";
 
-import { 
-  Header, 
-  NavBar, 
-  BottomContainer, 
-  LastContainer, 
-  CreationContainer 
-} from '../styles/containers';
-import { Button, Title } from '../styles/elements';
+import {
+  Header,
+  NavBar,
+  BottomContainer,
+  LastContainer,
+  CreationContainer,
+} from "../styles/containers";
+import { Button, Title } from "../styles/elements";
 
 const Home = () => {
   const [valueInputTitle, setValueInputTitle] = useState("");
@@ -24,7 +24,7 @@ const Home = () => {
     setValueInputArea(event.target.value);
   };
   const handleSelect = (event) => {
-    setValueInputTheme(event.target.value)
+    setValueInputTheme(event.target.value);
   };
 
   return (
@@ -38,26 +38,31 @@ const Home = () => {
         </div>
       </Header>
       <BottomContainer>
-        <NavBar>
-          Hello
-        </NavBar>
+        <NavBar>Hello</NavBar>
         <LastContainer>
           <Title>Create your Event</Title>
           <CreationContainer>
             <h4>Give a title to your event</h4>
             <input value={valueInputTitle} type="text" onChange={handleInput} />
             <h4>Give a theme to your event</h4>
-            <ThemeSelect handleSelect={handleSelect}/>
+            <ThemeSelect handleSelect={handleSelect} />
             <h4>Give a description to your event </h4>
-            <textarea value={valueInputArea} type="texte" onChange={handleArea} />
-            <Link to={{pathname: "/ChooseInfo",
-              state: {
-                title: valueInputTitle,
-                description: valueInputArea,
-                theme: valueInputTheme
-              }
-          }}>
-              <Button>NEXT</Button>
+            <textarea
+              value={valueInputArea}
+              type="texte"
+              onChange={handleArea}
+            />
+            <Link
+              to={{
+                pathname: "/ChooseInfo",
+                state: {
+                  title: valueInputTitle,
+                  description: valueInputArea,
+                  theme: valueInputTheme,
+                },
+              }}
+            >
+              <Button alt="Next">NEXT</Button>
             </Link>
           </CreationContainer>
         </LastContainer>

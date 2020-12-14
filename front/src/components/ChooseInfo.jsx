@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Header, BottomContainer, NavBar, LastContainer, CreationContainer } from "../styles/containers";
+import {
+  Header,
+  BottomContainer,
+  NavBar,
+  LastContainer,
+  CreationContainer,
+} from "../styles/containers";
 import { Button, Title } from "../styles/elements";
 
 const ChooseInfo = (props) => {
