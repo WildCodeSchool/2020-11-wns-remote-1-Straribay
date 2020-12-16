@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Header = styled.header`
   width: 100%;
@@ -13,9 +13,9 @@ export const Header = styled.header`
   background-color: ${(props) => props.theme.white};
 
   -webkit-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  -moz-box-shadow:    0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  box-shadow:         0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-`
+  -moz-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+  box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+`;
 
 export const NavBar = styled.div`
   display: flex;
@@ -28,13 +28,13 @@ export const NavBar = styled.div`
 
   width: 100px;
   height: 100%;
-`
+`;
 
 export const BottomContainer = styled.div`
   display: flex;
 
   min-height: 100vh;
-`
+`;
 export const LastContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ export const LastContainer = styled.div`
 
   width: 100%;
   max-height: 100%;
-`
+`;
 
 export const CreationContainer = styled.div`
   display: flex;
@@ -59,9 +59,9 @@ export const CreationContainer = styled.div`
   margin: 0 0 50px 0;
 
   -webkit-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  -moz-box-shadow:    0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  box-shadow:         0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-`
+  -moz-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+  box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+`;
 
 export const Card = styled.div`
   display: flex;
@@ -73,6 +73,6 @@ export const Card = styled.div`
   border-radius: 10px;
 
   -webkit-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  -moz-box-shadow:    0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-  box-shadow:         0px 5px 10px 0px rgba(51, 50, 50, 0.63);
-`
+  -moz-box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+  box-shadow: 0px 5px 10px 0px rgba(51, 50, 50, 0.63);
+`;

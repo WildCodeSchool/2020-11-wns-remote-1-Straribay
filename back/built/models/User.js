@@ -1,5 +1,7 @@
-import { model, Schema } from 'mongoose';
-const UserSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
+const UserSchema = new mongoose_1.Schema({
     firstname: {
         type: String,
         required: true
@@ -14,7 +16,7 @@ const UserSchema = new Schema({
         required: true
     },
     event: {
-        type: Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: "Event",
     },
     avatar: String,
@@ -23,4 +25,4 @@ const UserSchema = new Schema({
         }],
     group: String,
 });
-export default model("User", UserSchema);
+exports.default = mongoose_1.model("User", UserSchema);

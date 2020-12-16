@@ -7,4 +7,4 @@ export default {
   //TextSize
   normal: 400,
   bold: 700,
-}
+};

@@ -1,31 +1,38 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Header, BottomContainer, NavBar, LastContainer, CreationContainer } from "../styles/containers";
+import {
+  Header,
+  BottomContainer,
+  NavBar,
+  LastContainer,
+  CreationContainer,
+} from "../styles/containers";
 import { Button, Title } from "../styles/elements";
 
 const ChooseInfo = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
   const { title, description, theme } = props.location.state;
 
   const event = {
-    title: title,
-    description: description,
-    theme: theme,
+    title,
+    description,
+    theme,
   };
   const [info, setInfo] = useState("");
   const [date, setDate] = useState("");
   const [hour, setHour] = useState("");
 
-  const handleInfo = (event) => {
-    setInfo(event.target.value);
+  const handleInfo = (e) => {
+    setInfo(e.target.value);
   };
 
-  const handleDate = (event) => {
-    setDate(event.target.value);
+  const handleDate = (e) => {
+    setDate(e.target.value);
   };
 
-  const handleHour = (event) => {
-    setHour(event.target.value);
+  const handleHour = (e) => {
+    setHour(e.target.value);
   };
 
   return (
@@ -56,10 +63,10 @@ const ChooseInfo = (props) => {
               to={{
                 pathname: "/Invit",
                 state: {
-                  date: date,
-                  hour: hour,
-                  info: info,
-                  event: event,
+                  date,
+                  hour,
+                  info,
+                  event,
                 },
               }}
             >

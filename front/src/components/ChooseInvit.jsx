@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 
 import Result from "./Result";
 
-import { Header, NavBar, BottomContainer, LastContainer, CreationContainer } from '../styles/containers';
+import {
+  Header,
+  NavBar,
+  BottomContainer,
+  LastContainer,
+  CreationContainer,
+} from "../styles/containers";
 import { Button, Title } from "../styles/elements";
 
-let userSuggestions = ["Cloé", "Baptiste", "Maxime", "Marie"];
+const userSuggestions = ["Cloé", "Baptiste", "Maxime", "Marie"];
 
 const ChooseInvit = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
   const { event, hour, date, info } = props.location.state;
   event.date = date;
   event.hour = hour;
@@ -20,7 +27,7 @@ const ChooseInvit = (props) => {
   const handleChange = (e) => {
     setValue(e.target.value);
   };
-  let valueInsensibleCase = new RegExp(value, "i");
+  const valueInsensibleCase = new RegExp(value, "i");
 
   const handleAttend = (e) => {
     setAttending(e.target.value);
@@ -42,21 +49,25 @@ const ChooseInvit = (props) => {
           <Title>Create your Event</Title>
           <CreationContainer>
             <div>
-              <label>Who can attend :</label>
-              <select onChange={handleAttend}>
+              <label htmlFor="audience">Who can attend :</label>
+              <select
+                onChange={handleAttend}
+                name="choose-audience"
+                id="audience"
+              >
                 <option value="Friends">Friends</option>
                 <option value="Promo">Promo</option>
                 <option value="All">All</option>
               </select>
             </div>
             <div>
-              <label>Invite someone :</label>
+              <label htmlFor="invitations">Invite someone :</label>
               <input
-                type="email"
-                id="test"
-                name="invit"
-                value={value}
                 onChange={handleChange}
+                name="choose=invitation"
+                id="invitations"
+                type="email"
+                value={value}
                 list="users"
               />
             </div>
@@ -69,9 +80,9 @@ const ChooseInvit = (props) => {
               to={{
                 pathname: "/Details",
                 state: {
-                  attending: attending,
+                  attending,
                   userSelected: value,
-                  event: event,
+                  event,
                 },
               }}
             >
