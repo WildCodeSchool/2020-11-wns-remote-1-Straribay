@@ -19,6 +19,7 @@ const Details = (props) => {
   const addNewEvent = () => {
     eventList.push(event);
   };
+
   return (
     <>
       <Header>
