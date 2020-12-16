@@ -12,6 +12,7 @@ import { Title, Button } from "../styles/elements";
 import eventList from "./Data";
 
 const Details = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
   const { attending, userSelected, event } = props.location.state;
   const { title, description, theme, date, hour, info } = event;
   event.id = eventList.length + 1;
@@ -41,8 +42,14 @@ const Details = (props) => {
             <h3>{date}</h3>
             <h3>{hour}</h3>
             <h3>{info}</h3>
-            <h3>Only {attending} can attend</h3>
-            <h3>You've invited {userSelected}</h3>
+            <h3>
+              Only
+              {attending} can attend
+            </h3>
+            <h3>
+              You&apos;ve invited
+              {userSelected}
+            </h3>
             <Link
               to={{
                 pathname: "./events",

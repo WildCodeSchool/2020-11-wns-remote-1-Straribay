@@ -7,9 +7,8 @@
         "plugin:react/recommended",
         "airbnb",
         "prettier",
-        "airbnb-base"
+        "prettier/react"
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -19,10 +18,11 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error"
-    }
+        "prettier/prettier": "error",
+        "react/prop-types": 0
+    },
+    "parser": "babel-eslint"
 }
