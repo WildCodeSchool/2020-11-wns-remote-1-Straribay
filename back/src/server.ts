@@ -1,54 +1,30 @@
-import express from "express";
-import mongoose from "mongoose";
-import { graphqlHTTP } from "express-graphql";
-import { buildSchema } from "graphql";
-import { execArgv } from "process";
+import express from 'express';
+import mongoose from 'mongoose';
+import schema from './models/User';
 
-import schema from "./schema";
-import EventSchema from "./models/Events";
-
+const app = express();
 const port = 7777;
 
 const start = async () => {
-  // //Database
-  await mongoose.connect("mongodb://127.0.0.1:27017/virtualschool", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    autoIndex: true,
-  });
-  // eslint-disable-next-line no-console
-  console.log("Connected to database");
-  // .catch((err) => console.log(err));
-  // Create an express server and a GraphQL endpoint
-  const app = express();
+  try {
+    await mongoose.connect('mongodb://127.0.0.1:27017/virtualschool', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      autoIndex: true,
+    });
+    console.log('Connected to database');
+    app.listen(port, () => console.log(`Express GraphQL Server is now running on localhost:${port}`));
+  } catch (err) {
+    console.log(err);
+  }
+
   // middleware
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
-  app.get("/", (req, res) => {
-    res.send("Welcome Home !");
+  app.get('/', (req, res) => {
+    res.send('Welcome Home !');
   });
-
-  const getEvents = () => EventSchema.find();
-
-  const root = {
-    events: getEvents,
-  };
-
-  app.use(
-    "/graphql",
-    graphqlHTTP({
-      schema,
-      rootValue: root,
-      graphiql: true,
-    })
-  );
-
-  app.listen(port, () =>
-    // eslint-disable-next-line no-console
-    console.log(`Express GraphQL Server is now running on localhost:${port}`)
-  );
 };
-
 start();

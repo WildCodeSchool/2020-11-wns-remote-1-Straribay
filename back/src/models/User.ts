@@ -1,6 +1,19 @@
-import mongoose, { Schema } from "mongoose";
+import * as mongoose from 'mongoose';
 
-const UserSchema = new Schema({
+export const Schema = mongoose.Schema;
+export const ObjectId = mongoose.Types.ObjectId;
+export const Mixed = mongoose.Schema.Types.Mixed;
+
+export interface UserModel extends mongoose.Document {
+  firstname: string;
+  lastname: string;
+  email: string;
+  event: number;
+  avatar: string;
+  group: string;
+}
+
+const schema = new Schema({
   firstname: {
     type: String,
     required: true,
@@ -16,15 +29,9 @@ const UserSchema = new Schema({
   },
   event: {
     type: Schema.Types.ObjectId,
-    ref: "Event",
+    ref: 'Event',
   },
-  avatar: String,
-  friends: [
-    {
-      type: String,
-    },
-  ],
   group: String,
 });
 
-export default mongoose.model("User", UserSchema);
+export default schema;
