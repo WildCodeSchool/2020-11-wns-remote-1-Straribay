@@ -1,6 +1,7 @@
 import { buildSchema } from 'graphql';
 
 export const schema = buildSchema(`
+scalar Date
   type Query {
     event(id: Int!) : Event
     events(theme: String): [Event]
@@ -11,9 +12,9 @@ export const schema = buildSchema(`
     title: String
     author: String
     theme: String
-    date_start Date
+    date_start: Date
     description: String
-    infos: string
+    infos: String
     img: String
     attending: String
     invits: [String]

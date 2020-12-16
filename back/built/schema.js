@@ -1,5 +1,8 @@
-import { buildSchema } from 'graphql';
-export const schema = buildSchema(`
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.schema = void 0;
+const graphql_1 = require("graphql");
+exports.schema = graphql_1.buildSchema(`
   type Query {
     event(id: Int!) : Event
     events(theme: String): [Event]
@@ -10,9 +13,9 @@ export const schema = buildSchema(`
     title: String
     author: String
     theme: String
-    date_start Date
+    date_start: Date
     description: String
-    infos: string
+    infos: String
     img: String
     attending: String
     invits: [String]
