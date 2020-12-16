@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 
 const EventSchema = new Schema({
   author: String,
@@ -9,7 +9,7 @@ const EventSchema = new Schema({
   infos: String,
   img: String,
   attending: String,
-  invits: [String]
-})
+  invits: [String],
+});
 
-export default mongoose.model('event', EventSchema);
+export default mongoose.model("event", EventSchema);

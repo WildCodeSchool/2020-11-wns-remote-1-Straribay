@@ -1,27 +1,29 @@
-import { model, Schema } from 'mongoose';
+import { model, Schema } from "mongoose";
 
 const UserSchema = new Schema({
-  firstname: { 
+  firstname: {
     type: String,
-    required: true
+    required: true,
   },
-  lastname: { 
-    type:String,
-    required: true
+  lastname: {
+    type: String,
+    required: true,
   },
-  email: { 
-    type: String, 
+  email: {
+    type: String,
     unique: true,
-    required: true 
+    required: true,
   },
   event: {
-    type :Schema.Types.ObjectId,
-    ref : "Event",
+    type: Schema.Types.ObjectId,
+    ref: "Event",
   },
   avatar: String,
-  friends: [{
-    type: String
-  }],
+  friends: [
+    {
+      type: String,
+    },
+  ],
   group: String,
 });
 

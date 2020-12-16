@@ -1,6 +1,6 @@
-import { buildSchema } from 'graphql';
+import { buildSchema } from "graphql";
 
-export const schema = buildSchema(`
+const schema = buildSchema(`
 scalar Date
   type Query {
     event(id: Int!) : Event
@@ -19,4 +19,6 @@ scalar Date
     attending: String
     invits: [String]
   }
-`)
+`);
+
+export default schema;
