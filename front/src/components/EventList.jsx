@@ -25,20 +25,18 @@ function EventList() {
         <NavBar>Hello</NavBar>
         <LastContainer>
           <Title>Create your Event</Title>
-          {eventList.map((event) => {
-            return (
-              <EventCard
-                key={event.id}
-                title={event.title}
-                date={event.date}
-                hour={event.hour}
-                author={event.author}
-                description={event.description}
-                infos={event.infos}
-                image={event.image}
-              />
-            );
-          })}
+          {eventList.map((event) => (
+            <EventCard
+              key={event.id}
+              title={event.title}
+              date={event.date}
+              hour={event.hour}
+              author={event.author}
+              description={event.description}
+              infos={event.infos}
+              image={event.image}
+            />
+          ))}
         </LastContainer>
       </BottomContainer>
     </>
