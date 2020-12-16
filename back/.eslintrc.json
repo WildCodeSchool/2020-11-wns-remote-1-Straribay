@@ -6,7 +6,8 @@
   },
   "extends": [
     "airbnb-base",
-    "prettier"
+    "prettier",
+    "node"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -24,3 +25,4 @@
     "prettier/prettier": "error"
   }
 }
+

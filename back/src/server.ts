@@ -4,7 +4,6 @@ import { graphqlHTTP } from "express-graphql";
 import { buildSchema } from "graphql";
 import { execArgv } from "process";
 
-import MongoConnection from "./MongoConnection";
 import schema from "./schema";
 import EventSchema from "./models/Events";
 
