@@ -1,7 +1,7 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import User from './models/User';
+import mongoose, { Document } from 'mongoose';
 import { ApolloServer, gql } from 'apollo-server-express';
+import User from './models/User';
 
 const app = express();
 const port = 7777;
@@ -14,13 +14,16 @@ const start = async () => {
       useCreateIndex: true,
       autoIndex: true,
     });
+    // eslint-disable-next-line no-console
     console.log('Connected to database');
     app.listen(port, () =>
+      // eslint-disable-next-line no-console
       console.log(
         `Express GraphQL Server is now running on localhost:${port}${server.graphqlPath}`
       )
     );
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
   }
 
@@ -42,7 +45,7 @@ const typeDefs = gql`
   }
 
   type User {
-    _id: ObjectId
+    _id: String
     firstname: String
     lastname: String
     email: String
@@ -57,22 +60,22 @@ const typeDefs = gql`
     addUser(firstname: String!, lastname: String!, email: String!): User
   }
 `;
-interface InputUser {
-  _id?: String;
-  firstname: String;
-  lastname: String;
-  email: String;
+interface InputUser extends Document {
+  firstname: string;
+  lastname: string;
+  email: string;
 }
 const resolvers = {
   Query: {
-    getUser: async (id: string) => await User.findOne({ _id: id }).exec(),
-    getUsers: async () => await User.find({}).exec(),
+    getUser: async (id: string) => User.find({ _id: id }).exec(),
+    getUsers: async () => User.find({}).exec(),
   },
 
   Mutation: {
-    addUser: async (_: any, args: any) => {
+    addUser: async (_ , args: InputUser) => {
       try {
-        let response = await User.create(args);
+        const response = await User.create(args);
+        // eslint-disable-next-line no-console
         console.log(response, args);
         return response;
       } catch (e) {
