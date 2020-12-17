@@ -47,7 +47,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (_, args: InputUser) => {
+    addUser: async (_: unknown, args: InputUser) => {
       try {
         const response = await User.create(args);
         // eslint-disable-next-line no-console
