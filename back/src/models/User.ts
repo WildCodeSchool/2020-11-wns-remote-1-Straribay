@@ -1,7 +1,6 @@
 import * as mongoose from 'mongoose';
 
-export const { Schema } = mongoose;
-// export const { ObjectId } = mongoose.Types;
+const { Schema } = mongoose;
 // export const { Mixed } = mongoose.Schema.Types;
 
 export interface UserModel extends mongoose.Document {
@@ -27,10 +26,6 @@ const userSchema = new Schema({
     unique: true,
     required: true,
   },
-  // event: {
-  // type: Schema.Types.ObjectId,
-  // ref: 'Event',
-  // },
   group: String,
 });
 
