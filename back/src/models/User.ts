@@ -1,19 +1,19 @@
 import * as mongoose from 'mongoose';
 
-export const Schema = mongoose.Schema;
-export const ObjectId = mongoose.Types.ObjectId;
-export const Mixed = mongoose.Schema.Types.Mixed;
+export const { Schema } = mongoose;
+// export const { ObjectId } = mongoose.Types;
+// export const { Mixed } = mongoose.Schema.Types;
 
 export interface UserModel extends mongoose.Document {
   firstname: string;
   lastname: string;
   email: string;
-  event: number;
-  avatar: string;
-  group: string;
+  // event: number;
+  // avatar: string;
+  // group: string;
 }
 
-const schema = new Schema({
+const userSchema = new Schema({
   firstname: {
     type: String,
     required: true,
@@ -27,11 +27,13 @@ const schema = new Schema({
     unique: true,
     required: true,
   },
-  event: {
-    type: Schema.Types.ObjectId,
-    ref: 'Event',
-  },
+  // event: {
+  // type: Schema.Types.ObjectId,
+  // ref: 'Event',
+  // },
   group: String,
 });
 
-export default schema;
+const User = mongoose.model('user', userSchema);
+
+export default User;
