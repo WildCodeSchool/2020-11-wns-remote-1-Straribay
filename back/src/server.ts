@@ -1,5 +1,5 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 import { ApolloServer, gql } from 'apollo-server-express';
 import User from './models/User';
 
@@ -26,10 +26,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(user: InputUser): User
+    addUser(firstname: String!, lastname: String!, email: String!): User
   }
 `;
-interface InputUser {
+interface InputUser extends Document {
   firstname: string;
   lastname: string;
   email: string;
@@ -47,12 +47,11 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (args: InputUser) => {
+    addUser: async (_, args: InputUser) => {
       try {
-        const user = new User(args);
-        const response = await user.save();
+        const response = await User.create(args);
         // eslint-disable-next-line no-console
-        console.log(response, args);
+        console.log(response, args, args);
         return response;
       } catch (e) {
         return e.message;
