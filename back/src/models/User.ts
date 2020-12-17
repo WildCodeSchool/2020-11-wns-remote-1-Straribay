@@ -1,28 +1,37 @@
-import { model, Schema } from 'mongoose';
+import * as mongoose from 'mongoose';
 
-const UserSchema = new Schema({
-  firstname: { 
+export const Schema = mongoose.Schema;
+export const ObjectId = mongoose.Types.ObjectId;
+export const Mixed = mongoose.Schema.Types.Mixed;
+
+export interface UserModel extends mongoose.Document {
+  firstname: string;
+  lastname: string;
+  email: string;
+  event: number;
+  avatar: string;
+  group: string;
+}
+
+const schema = new Schema({
+  firstname: {
     type: String,
-    required: true
+    required: true,
   },
-  lastname: { 
-    type:String,
-    required: true
+  lastname: {
+    type: String,
+    required: true,
   },
-  email: { 
-    type: String, 
+  email: {
+    type: String,
     unique: true,
-    required: true 
+    required: true,
   },
   event: {
-    type :Schema.Types.ObjectId,
-    ref : "Event",
+    type: Schema.Types.ObjectId,
+    ref: 'Event',
   },
-  avatar: String,
-  friends: [{
-    type: String
-  }],
   group: String,
 });
 
-export default model("User", UserSchema);
+export default schema;
