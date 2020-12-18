@@ -7,9 +7,9 @@ import {
   NavBar,
   CreationContainer,
   LastContainer,
-} from "../styles/containers";
-import { Title, Button } from "../styles/elements";
-import eventList from "./Data";
+} from "../../styles/containers";
+import { Title, Button } from "../../styles/elements";
+import eventList from "../Data";
 
 const Details = (props) => {
   // eslint-disable-next-line react/destructuring-assignment

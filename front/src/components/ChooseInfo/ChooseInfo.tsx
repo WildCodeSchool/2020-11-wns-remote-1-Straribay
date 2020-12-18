@@ -7,10 +7,10 @@ import {
   NavBar,
   LastContainer,
   CreationContainer,
-} from "../styles/containers";
-import { Button, Title } from "../styles/elements";
+} from "../../styles/containers";
+import { Button, Title } from "../../styles/elements";
 
-const ChooseInfo = (props) => {
+const ChooseInfo = (props: string[]) => {
   // eslint-disable-next-line react/destructuring-assignment
   const { title, description, theme } = props.location.state;
 

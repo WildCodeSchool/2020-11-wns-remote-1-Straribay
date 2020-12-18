@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import ChooseInfo from "./components/ChooseInfo";
-import Home from "./components/Home";
-import EventList from "./components/EventList";
-import ChooseInvit from "./components/ChooseInvit";
-import EventDetail from "./components/EventDetail";
+import ChooseInfo from "./components/ChooseInfo/ChooseInfo";
+import Home from "./components/Home/Home";
+import EventList from "./components/EventList/EventList";
+import ChooseInvit from "./components/ChooseInvit/ChooseInvit";
+import EventDetail from "./components/EventDetail/EventDetail";
 
 function Router() {
   return (

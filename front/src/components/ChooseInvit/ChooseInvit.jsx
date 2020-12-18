@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Result from "./Result";
+import Result from "../Result/Result";
 
 import {
   Header,
@@ -9,8 +9,8 @@ import {
   BottomContainer,
   LastContainer,
   CreationContainer,
-} from "../styles/containers";
-import { Button, Title } from "../styles/elements";
+} from "../../styles/containers";
+import { Button, Title } from "../../styles/elements";
 
 const userSuggestions = ["Cloé", "Baptiste", "Maxime", "Marie"];
 

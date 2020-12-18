@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import ThemeSelect from "./ThemeSelect";
+import ThemeSelect from "../ThemeSelect/ThemeSelect";
 
 import {
   Header,
   NavBar,
   BottomContainer,
   LastContainer,
-  CreationContainer,
-} from "../styles/containers";
-import { Button, Title } from "../styles/elements";
+  CreationContainer
+} from "../../styles/containers";
+import { Button, Title } from "../../styles/elements";
 
 const Home = () => {
   const [valueInputTitle, setValueInputTitle] = useState("");

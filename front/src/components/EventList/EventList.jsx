@@ -1,14 +1,14 @@
 import React from "react";
 
-import EventCard from "./EventCard";
+import EventCard from "../EventCard/EventCard";
 import {
   Header,
   BottomContainer,
   NavBar,
   LastContainer,
-} from "../styles/containers";
-import { Title } from "../styles/elements";
-import eventList from "./Data";
+} from "../../styles/containers";
+import { Title } from "../../styles/elements";
+import eventList from "../Data";
 
 function EventList() {
   return (
