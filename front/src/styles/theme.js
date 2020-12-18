@@ -1,10 +1,11 @@
 export default {
-  //Text Color
+  // Text Color
+
   white: "#FFFFFF",
   orange: "#FC8948",
   blue: "#17303F",
 
-  //TextSize
+  // TextSize
   normal: 400,
   bold: 700,
 };
