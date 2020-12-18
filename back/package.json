@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "test": "jest",
-    "test-watch":"jest --watch",
+    "test-watch": "jest --watch",
     "build": "rm -rf ./built && tsc",
     "start": "npm run dev",
     "dev": "ts-node-dev --transpile-only --respawn ./src/server.ts",

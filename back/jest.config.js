@@ -1,7 +1,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  modulePathIgnorePatterns: ['<rootDir>'],
+  modulePathIgnorePatterns: ['<rootDir>/webservice'],
   globals: {
     'ts-jest': {
       isolatedModules: true,
