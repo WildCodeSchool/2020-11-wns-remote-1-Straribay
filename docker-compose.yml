@@ -1,16 +1,16 @@
-volumes:
-  data:
-
 services:
   app:
     build: .
     ports:
       - 4000:7777
     volumes:
-      - data:/var/lib/docker/volumes/data/_data:rw
+      - /data:/data
   mongodb:
     image: mongo
     volumes: 
-      - data:/var/lib/docker/volumes/data/_data:rw
+      - /data/db:/data/db:rw
+volumes:
+  data:
+
 
     
