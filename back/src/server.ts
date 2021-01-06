@@ -76,7 +76,7 @@ const start = async () => {
     app.listen(port, () =>
       // eslint-disable-next-line no-console
       console.log(
-        `Express GraphQL Server is now running on localhost:${port}${server.graphqlPath}`
+        `Express GraphQL Server is now running Youhou on localhost:${port}${server.graphqlPath}`
       )
     );
   } catch (err) {
