@@ -17,7 +17,4 @@ jobs:
       - name: Pull Docker Image
         run: docker pull vincefritsch/straribay_back
       - name: Run npm test
-        run: |
-            docker run ${{ secrets.DOCKERHUB_USERNAME }}/straribay_back sh
-            cd ..
-            npm run test
+        run: docker run test
