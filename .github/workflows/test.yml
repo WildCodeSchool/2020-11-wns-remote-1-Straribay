@@ -18,5 +18,5 @@ jobs:
         run: docker pull vincefritsch/straribay_back
       - name: Run npm test
         run: |
-            docker run ${{ secrets.DOCKERHUB_USERNAME }}/straribay_back sh
+            docker run ${{ secrets.DOCKERHUB_USERNAME }}/straribay_back sh -T
             npm run test
