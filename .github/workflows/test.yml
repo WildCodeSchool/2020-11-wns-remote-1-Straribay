@@ -17,8 +17,4 @@ jobs:
       - name: Pull Docker Image
         run: docker pull vincefritsch/straribay_back
       - name: Run npm test
-<<<<<<< HEAD
         run: docker exec -it vincefritsch/straribay_back:latest sh npm run test
-=======
-        run: docker exec -it vincefritsch/straribay_back sh npm test
->>>>>>> c47c4d1b6b1778d967f6e8e58e2b8343d15e0954
