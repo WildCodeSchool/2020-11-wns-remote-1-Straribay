@@ -17,4 +17,4 @@ jobs:
       - name: Pull Docker Image
         run: docker pull vincefritsch/straribay_back
       - name: Run npm test
-        run: docker run -it vincefritsch/straribay_back sh npm run test
+        run: docker run --cidfile ${{ secrets.DOCKERHUB_USERNAME }}/straribay_back sh npm run test
