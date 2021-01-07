@@ -20,5 +20,4 @@ jobs:
         run: |
             docker run -i ${{ secrets.DOCKERHUB_USERNAME }}/straribay_back sh
             cd ..
-            cd back
             npm run test
